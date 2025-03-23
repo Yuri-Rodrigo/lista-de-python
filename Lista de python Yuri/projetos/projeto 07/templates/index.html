@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <h1>Bem-vindo à Biblioteca</h1>
+    <a href="{{ url_for('cadastro') }}">Cadastrar Livro</a> | 
+    <a href="{{ url_for('busca') }}">Buscar Livro</a> | 
+    <a href="{{ url_for('contato') }}">Contato</a>
+
+    <h2>Livros Cadastrados</h2>
+    <ul>
+        {% for livro in livros %}
+            <li>{{ livro.titulo }} - {{ livro.autor }} ({{ livro.ano }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
